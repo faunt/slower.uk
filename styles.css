@@ -11,6 +11,7 @@ body {
     color: #1a1a1a;
     background: linear-gradient(180deg, 
         #3C5AC0 0%, 
+        #4F70DD 40%, 
         #8CA3E8 80%, 
         #EACDA3 100%);
     font-size: 16px;
@@ -97,8 +98,7 @@ body {
 }
 
 .name {
-    color: #000000;
-    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .contact-link {
