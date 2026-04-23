@@ -10,24 +10,76 @@
     /* Fallback to our gradient colors if Arc properties aren't available */
     --arc-palette-background: #3C5AC0;
     --arc-palette-foregroundPrimary: #1a1a1a;
+    --gradient-top: var(--arc-palette-background, #3C5AC0);
+    --gradient-mid: #4F70DD;
+    --gradient-low: #8CA3E8;
+    --gradient-bottom: #EACDA3;
+    --ambient-glow-top: rgba(255, 255, 255, 0.18);
+    --ambient-glow-bottom: rgba(234, 205, 163, 0.26);
+}
+
+html {
+    min-height: 100%;
+    background-color: var(--gradient-top);
+    background-image:
+        radial-gradient(circle at 50% -12%, var(--ambient-glow-top) 0%, transparent 48%),
+        radial-gradient(circle at 50% 118%, var(--ambient-glow-bottom) 0%, transparent 42%),
+        linear-gradient(180deg,
+            var(--gradient-top) 0%,
+            var(--gradient-mid) 38%,
+            var(--gradient-low) 78%,
+            var(--gradient-bottom) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--arc-palette-foregroundPrimary, #1a1a1a);
-    background: linear-gradient(180deg, 
-        var(--arc-palette-background, #3C5AC0) 0%, 
-        #4F70DD 40%, 
-        #8CA3E8 80%, 
-        #EACDA3 100%);
     font-size: 16px;
     font-weight: 400;
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+    background: transparent;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: max(140px, env(safe-area-inset-top, 0px));
+    background: var(--gradient-top);
+    z-index: -2;
+    pointer-events: none;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: -18vmax;
+    background-image:
+        radial-gradient(circle at 50% -12%, var(--ambient-glow-top) 0%, transparent 48%),
+        radial-gradient(circle at 50% 118%, var(--ambient-glow-bottom) 0%, transparent 42%),
+        linear-gradient(180deg,
+            var(--gradient-top) 0%,
+            var(--gradient-mid) 38%,
+            var(--gradient-low) 78%,
+            var(--gradient-bottom) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .page {
@@ -35,8 +87,10 @@ body {
 }
 
 .page--document {
-    align-items: flex-start;
-    padding: 40px 20px;
+    min-height: 100vh;
+    min-height: 100svh;
+    align-items: center;
+    overflow: hidden;
 }
 
 .container {
@@ -70,11 +124,13 @@ body {
 }
 
 .container--document {
-    width: min(720px, calc(100vw - 40px));
-    height: auto;
+    width: min(440px, calc(100vw - 40px));
+    height: min(874px, calc(100vh - 40px));
+    height: min(874px, calc(100svh - 40px));
     min-height: 0;
-    padding: 48px 44px;
+    padding: 36px 24px;
     border-radius: 44px;
+    overflow: hidden;
 }
 
 .container--document::before {
@@ -151,10 +207,15 @@ body {
 
 .content--document {
     width: 100%;
-    max-width: 560px;
+    max-width: none;
+    height: 100%;
     font-size: 1.05rem;
     line-height: 1.65;
     color: rgba(0, 0, 0, 0.56);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 12px 14px 12px 18px;
+    scrollbar-gutter: stable both-edges;
 }
 
 .content--document p {
@@ -214,7 +275,7 @@ body {
     }
 
     .page--document {
-        padding: 24px 16px;
+        padding: 20px;
     }
     
     .container {
@@ -240,9 +301,9 @@ body {
     }
 
     .container--document {
-        width: min(680px, calc(100vw - 32px));
-        height: auto;
-        padding: 40px 32px;
+        width: min(390px, calc(100vw - 32px));
+        height: min(760px, calc(100svh - 40px));
+        padding: 28px 18px;
         border-radius: 36px;
     }
 
@@ -256,6 +317,7 @@ body {
 
     .content--document {
         font-size: 1rem;
+        padding: 8px 10px 8px 14px;
     }
 
     .content--document h1 {
@@ -269,7 +331,7 @@ body {
     }
 
     .page--document {
-        padding: 16px 12px;
+        padding: 15px;
     }
     
     .container {
@@ -295,8 +357,9 @@ body {
     }
 
     .container--document {
-        width: calc(100vw - 24px);
-        padding: 32px 24px;
+        width: min(320px, calc(100vw - 30px));
+        height: min(650px, calc(100svh - 30px));
+        padding: 24px 14px;
         border-radius: 30px;
     }
 
@@ -318,11 +381,22 @@ body {
     body {
         background-color: white;
     }
+
+    body::before {
+        display: none;
+    }
     
     .container {
         max-width: none;
+        width: auto;
+        height: auto;
         padding: 0;
         box-shadow: none;
         background-color: white;
+    }
+
+    .container--document,
+    .content--document {
+        overflow: visible;
     }
 }
