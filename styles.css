@@ -124,21 +124,22 @@ body::before {
 }
 
 .container--document {
-    width: min(440px, calc(100vw - 40px));
-    height: min(874px, calc(100vh - 40px));
-    height: min(874px, calc(100svh - 40px));
+    width: 402px;
+    height: 874px;
     min-height: 0;
-    padding: 36px 24px;
-    border-radius: 44px;
+    padding: 60px 40px;
+    border-radius: 60px;
+    align-items: stretch;
+    justify-content: flex-start;
     overflow: hidden;
 }
 
 .container--document::before {
-    border-radius: 44px;
+    border-radius: 60px;
 }
 
 .container--document::after {
-    border-radius: 43px;
+    border-radius: 59px;
 }
 
 /* Enhanced glass effect with pseudo-elements for depth */
@@ -200,26 +201,31 @@ body::before {
     margin-bottom: 1rem;
 }
 
-.content h2 {
-    font-size: 1.05rem;
-    margin-bottom: 0.45rem;
-}
-
 .content--document {
     width: 100%;
     max-width: none;
     height: 100%;
-    font-size: 1.05rem;
-    line-height: 1.65;
-    color: rgba(0, 0, 0, 0.56);
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.3);
+    font-weight: 400;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 12px 14px 12px 18px;
-    scrollbar-gutter: stable both-edges;
+    padding-right: 10px;
+    scrollbar-gutter: stable;
 }
 
 .content--document p {
-    margin-bottom: 0.95rem;
+    margin-bottom: 1.4rem;
+}
+
+.policy-section {
+    margin-top: 1.4rem;
+}
+
+.policy-title {
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 500;
 }
 
 .eyebrow,
@@ -230,21 +236,12 @@ body::before {
 
 .eyebrow {
     text-transform: uppercase;
-    margin-bottom: 1rem;
     color: rgba(0, 0, 0, 0.45);
-}
-
-.lede {
-    color: rgba(0, 0, 0, 0.72);
-    font-size: 1.15rem;
-}
-
-.policy-section {
-    margin-top: 1.4rem;
 }
 
 .meta {
     margin-top: 1.8rem;
+    margin-bottom: 0;
     color: rgba(0, 0, 0, 0.42);
 }
 
@@ -301,27 +298,24 @@ body::before {
     }
 
     .container--document {
-        width: min(390px, calc(100vw - 32px));
-        height: min(760px, calc(100svh - 40px));
-        padding: 28px 18px;
-        border-radius: 36px;
+        width: min(350px, calc(100vw - 40px));
+        height: min(760px, calc((100vh - 40px) * 0.9));
+        max-height: calc((min(350px, calc(100vw - 40px))) * 2.17);
+        padding: 50px 35px;
+        border-radius: 50px;
     }
 
     .container--document::before {
-        border-radius: 36px;
+        border-radius: 50px;
     }
 
     .container--document::after {
-        border-radius: 35px;
+        border-radius: 49px;
     }
 
     .content--document {
-        font-size: 1rem;
-        padding: 8px 10px 8px 14px;
-    }
-
-    .content--document h1 {
-        font-size: 1.9rem;
+        font-size: 1.5rem;
+        padding-right: 8px;
     }
 }
 
@@ -357,22 +351,23 @@ body::before {
     }
 
     .container--document {
-        width: min(320px, calc(100vw - 30px));
-        height: min(650px, calc(100svh - 30px));
-        padding: 24px 14px;
-        border-radius: 30px;
+        width: min(300px, calc(100vw - 30px));
+        height: min(650px, calc((100vh - 30px) * 0.9));
+        max-height: calc((min(300px, calc(100vw - 30px))) * 2.17);
+        padding: 40px 30px;
+        border-radius: 45px;
     }
 
     .container--document::before {
-        border-radius: 30px;
+        border-radius: 45px;
     }
 
     .container--document::after {
-        border-radius: 29px;
+        border-radius: 44px;
     }
 
-    .content--document h1 {
-        font-size: 1.65rem;
+    .content--document {
+        font-size: 1.3rem;
     }
 }
 
