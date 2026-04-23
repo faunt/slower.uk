@@ -66,7 +66,7 @@ body::after {
 body::before {
     content: '';
     position: fixed;
-    inset: -18vmax;
+    inset: 0;
     background-image:
         radial-gradient(circle at 50% -12%, var(--ambient-glow-top) 0%, transparent 48%),
         radial-gradient(circle at 50% 118%, var(--ambient-glow-bottom) 0%, transparent 42%),
@@ -76,8 +76,8 @@ body::before {
             var(--gradient-low) 78%,
             var(--gradient-bottom) 100%);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-size: 100% 100%;
+    background-position: top center;
     z-index: -1;
     pointer-events: none;
 }
