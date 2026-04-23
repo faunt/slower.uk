@@ -30,6 +30,15 @@ body {
     padding: 20px;
 }
 
+.page {
+    align-items: center;
+}
+
+.page--document {
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
 .container {
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(25px) saturate(180%);
@@ -58,6 +67,22 @@ body {
         0 12px 40px rgba(0, 0, 0, 0.15),
         0 0 0 1px rgba(255, 255, 255, 0.2) inset,
         0 1px 0 rgba(255, 255, 255, 0.4) inset;
+}
+
+.container--document {
+    width: min(720px, calc(100vw - 40px));
+    height: auto;
+    min-height: 0;
+    padding: 48px 44px;
+    border-radius: 44px;
+}
+
+.container--document::before {
+    border-radius: 44px;
+}
+
+.container--document::after {
+    border-radius: 43px;
 }
 
 /* Enhanced glass effect with pseudo-elements for depth */
@@ -106,6 +131,62 @@ body {
 .content p {
     margin-bottom: 1.4rem;
 }
+
+.content h1,
+.content h2 {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.content h1 {
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.content h2 {
+    font-size: 1.05rem;
+    margin-bottom: 0.45rem;
+}
+
+.content--document {
+    width: 100%;
+    max-width: 560px;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: rgba(0, 0, 0, 0.56);
+}
+
+.content--document p {
+    margin-bottom: 0.95rem;
+}
+
+.eyebrow,
+.meta {
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.lede {
+    color: rgba(0, 0, 0, 0.72);
+    font-size: 1.15rem;
+}
+
+.policy-section {
+    margin-top: 1.4rem;
+}
+
+.meta {
+    margin-top: 1.8rem;
+    color: rgba(0, 0, 0, 0.42);
+}
+
 .small {
     font-size: 1.2rem;
 }
@@ -131,6 +212,10 @@ body {
     body {
         padding: 20px;
     }
+
+    .page--document {
+        padding: 24px 16px;
+    }
     
     .container {
         /* Maintain aspect ratio 402:874 ≈ 0.46, with viewport-based sizing */
@@ -153,11 +238,38 @@ body {
     .content {
         font-size: 1.5rem;
     }
+
+    .container--document {
+        width: min(680px, calc(100vw - 32px));
+        height: auto;
+        padding: 40px 32px;
+        border-radius: 36px;
+    }
+
+    .container--document::before {
+        border-radius: 36px;
+    }
+
+    .container--document::after {
+        border-radius: 35px;
+    }
+
+    .content--document {
+        font-size: 1rem;
+    }
+
+    .content--document h1 {
+        font-size: 1.9rem;
+    }
 }
 
 @media (max-width: 480px) {
     body {
         padding: 15px;
+    }
+
+    .page--document {
+        padding: 16px 12px;
     }
     
     .container {
@@ -180,6 +292,24 @@ body {
     
     .content {
         font-size: 1.3rem;
+    }
+
+    .container--document {
+        width: calc(100vw - 24px);
+        padding: 32px 24px;
+        border-radius: 30px;
+    }
+
+    .container--document::before {
+        border-radius: 30px;
+    }
+
+    .container--document::after {
+        border-radius: 29px;
+    }
+
+    .content--document h1 {
+        font-size: 1.65rem;
     }
 }
 
