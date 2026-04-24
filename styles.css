@@ -231,6 +231,12 @@ body::before {
     margin-bottom: 1.4rem;
 }
 
+.content--document::after {
+    content: '';
+    display: block;
+    height: 100%;
+}
+
 .policy-section {
     margin-top: 1.4rem;
 }
@@ -408,5 +414,9 @@ body::before {
     .container--document,
     .content--document {
         overflow: visible;
+    }
+
+    .content--document::after {
+        display: none;
     }
 }
