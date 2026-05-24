@@ -20,25 +20,14 @@
     <!--
         Replace points:
         - App Store URL: update the App Store CTA href values if Apple changes the public product URL.
-        - Image assets: swap /assets/yearly/app-icon.png, /assets/iphone.webp, /assets/iphone.png, /assets/macOS.webp, and /assets/macOS.jpg when final iOS campaign assets are ready.
+        - Image assets: swap /assets/yearly/app-icon.png, /assets/iphone.webp, /assets/iphone.png, /assets/macOS.webp, /assets/macOS.jpg, /assets/ribbon.webp, and /assets/dude.webp when final iOS campaign assets are ready.
         - Headline copy: edit the hero h1 and supporting paragraph in the Hero section.
         - Analytics hooks: add campaign click tracking to links with data-analytics="app-store-cta".
     -->
     <div class="page-shell">
         <header class="hero">
-            <nav class="topbar" aria-label="Primary">
-                <a class="brand" href="/yearly/" aria-label="Yearly">
-                    <span class="brand__icon-shell">
-                        <img src="/assets/yearly/app-icon.png" alt="" class="brand__icon" onerror="this.hidden = true;">
-                    </span>
-                    <span>Yearly</span>
-                </a>
-                <a class="topbar__link" href="/privacy/yearly/">Privacy</a>
-            </nav>
-
             <div class="hero__grid">
                 <section class="hero__copy" aria-labelledby="hero-title">
-                    <img src="/assets/yearly/app-icon.png" alt="Yearly app icon" class="hero__icon" onerror="this.hidden = true;">
                     <p class="eyebrow">Yearly for iPhone, iPad, and Mac</p>
                     <h1 id="hero-title">See your whole year at once.</h1>
                     <p class="hero__lede">Highlight days, weeks, holidays, custody schedules, PTO, trips, deadlines, and anything else you need to keep track of.</p>
@@ -140,6 +129,15 @@
                 </div>
             </section>
 
+            <section class="story-break story-break--ribbon" aria-label="Overlapping plans become easier to see">
+                <div class="story-break__copy">
+                    <p class="eyebrow">From overlap to order</p>
+                    <h2>Colour makes the year easier to read.</h2>
+                    <p>Use a different colour for each kind of plan, then see where the year is crowded and where there is room.</p>
+                </div>
+                <img src="/assets/ribbon.webp" alt="" class="story-break__asset story-break__asset--ribbon" loading="lazy" decoding="async" width="900" height="654">
+            </section>
+
             <section class="section use-cases" aria-labelledby="use-cases-title">
                 <div class="section__intro section__intro--center">
                     <p class="eyebrow">Use cases</p>
@@ -152,6 +150,15 @@
                     <article class="use-case-card">Travel planning</article>
                     <article class="use-case-card">Projects and deadlines</article>
                     <article class="use-case-card">Habits, routines, and personal rituals</article>
+                </div>
+            </section>
+
+            <section class="story-break story-break--dude" aria-label="A calmer way to plan the year">
+                <img src="/assets/dude.webp" alt="" class="story-break__asset story-break__asset--dude" loading="lazy" decoding="async" width="900" height="621">
+                <div class="story-break__copy">
+                    <p class="eyebrow">Less calendar panic</p>
+                    <h2>Keep the shape of the year in front of you.</h2>
+                    <p>Yearly helps turn scattered dates into something you can scan, share, and plan around.</p>
                 </div>
             </section>
 
