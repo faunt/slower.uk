@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFF8EA">
+    <meta name="theme-color" content="#FFF8EA" media="(prefers-color-scheme: light)">
+    <meta name="color-scheme" content="light">
+    <meta name="description" content="A simple visual calendar for highlighting date ranges, spotting overlaps, and planning the year ahead.">
+    <meta name="apple-itunes-app" content="app-id=6763142417">
+    <meta property="og:title" content="Yearly - See your whole year at once">
+    <meta property="og:description" content="A simple visual calendar for highlighting date ranges, spotting overlaps, and planning the year ahead.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/yearly/app-screenshot-year-view.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Yearly - See your whole year at once</title>
+    <link rel="stylesheet" href="/yearly/ios/styles.css">
+</head>
+<body>
+    <!--
+        Replace points:
+        - App Store URL: update the App Store CTA href values if Apple changes the public product URL.
+        - Image assets: swap /assets/yearly/app-icon.png, /assets/iphone.png, and /assets/yearly/app-screenshot-year-view.png when final iOS campaign assets are ready.
+        - Headline copy: edit the hero h1 and supporting paragraph in the Hero section.
+        - Analytics hooks: add campaign click tracking to links with data-analytics="app-store-cta".
+    -->
+    <div class="page-shell">
+        <header class="hero">
+            <nav class="topbar" aria-label="Primary">
+                <a class="brand" href="/yearly/" aria-label="Yearly">
+                    <span class="brand__icon-shell">
+                        <img src="/assets/yearly/app-icon.png" alt="" class="brand__icon" onerror="this.hidden = true;">
+                    </span>
+                    <span>Yearly</span>
+                </a>
+                <a class="topbar__link" href="/privacy/yearly/">Privacy</a>
+            </nav>
+
+            <div class="hero__grid">
+                <section class="hero__copy" aria-labelledby="hero-title">
+                    <img src="/assets/yearly/app-icon.png" alt="Yearly app icon" class="hero__icon" onerror="this.hidden = true;">
+                    <p class="eyebrow">Yearly for iPhone, iPad, and Mac</p>
+                    <h1 id="hero-title">See your whole year at once.</h1>
+                    <p class="hero__lede">Highlight days, weeks, holidays, custody schedules, PTO, trips, deadlines, and anything else you need to keep track of.</p>
+                    <div class="hero__actions">
+                        <a class="app-store-button" href="https://apps.apple.com/app/id6763142417" aria-label="Download Yearly on the App Store" data-analytics="app-store-cta">
+                            Download on the App Store
+                        </a>
+                        <p class="cta-note">Designed for iPhone, iPad, and Mac.</p>
+                    </div>
+                </section>
+
+                <section class="hero__visual" aria-label="Yearly turns overlapping plans into a clear year view">
+                    <div class="ribbon-field ribbon-field--messy" aria-hidden="true">
+                        <span class="ribbon ribbon--yellow"></span>
+                        <span class="ribbon ribbon--orange"></span>
+                        <span class="ribbon ribbon--pink"></span>
+                        <span class="ribbon ribbon--purple"></span>
+                        <span class="ribbon ribbon--blue"></span>
+                        <span class="ribbon ribbon--teal"></span>
+                    </div>
+                    <div class="glass-panel glass-panel--floating glass-panel--small" aria-hidden="true">
+                        <span class="mini-calendar__face">!</span>
+                    </div>
+                    <div class="phone-mockup">
+                        <img src="/assets/iphone.png" alt="Yearly on iPhone showing highlighted date ranges across a year calendar." class="phone-mockup__asset" onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
+                        <div class="phone-mockup__fallback" hidden>
+                            <div class="placeholder-calendar" aria-hidden="true">
+                                <span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ribbon-field ribbon-field--ordered" aria-hidden="true">
+                        <span class="ordered-strip ordered-strip--teal"></span>
+                        <span class="ordered-strip ordered-strip--pink"></span>
+                        <span class="ordered-strip ordered-strip--yellow"></span>
+                    </div>
+                </section>
+            </div>
+        </header>
+
+        <main>
+            <section class="section problem-section" aria-labelledby="problem-title">
+                <div class="section__intro">
+                    <p class="eyebrow">Why Yearly</p>
+                    <h2 id="problem-title">Plans don't usually arrive one at a time.</h2>
+                    <p>School holidays, work leave, co-parenting schedules, trips, deadlines, routines - they all overlap. Yearly gives you a simple way to mark them out and see the shape of the year.</p>
+                </div>
+                <div class="card-grid card-grid--three">
+                    <article class="feature-card">
+                        <span class="feature-card__mark feature-card__mark--pink"></span>
+                        <h3>Spot overlaps</h3>
+                        <p>See when plans collide before the week arrives.</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-card__mark feature-card__mark--teal"></span>
+                        <h3>Count highlighted days</h3>
+                        <p>Understand how much time each plan actually takes.</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-card__mark feature-card__mark--yellow"></span>
+                        <h3>Plan around real life</h3>
+                        <p>Keep holidays, travel, work, and family rhythms visible.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section product-section" aria-labelledby="product-title">
+                <div class="product-visual">
+                    <div class="desktop-glass">
+                        <img src="/assets/yearly/app-screenshot-year-view.png" alt="Yearly whole-year calendar view with highlighted date ranges." onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
+                        <div class="screenshot-placeholder screenshot-placeholder--wide" hidden>
+                            <div class="placeholder-calendar" aria-hidden="true">
+                                <span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-copy">
+                    <p class="eyebrow">How it works</p>
+                    <h2 id="product-title">Highlight ranges. Understand your year.</h2>
+                    <p>Tap and drag to mark days. Use colours for different plans. Zoom out from individual events and see the bigger pattern.</p>
+                    <ul class="feature-list">
+                        <li>Whole-year calendar view</li>
+                        <li>Colour-coded date ranges</li>
+                        <li>Day counts by colour</li>
+                        <li>Sync across devices</li>
+                        <li>Simple, calm interface</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section use-cases" aria-labelledby="use-cases-title">
+                <div class="section__intro section__intro--center">
+                    <p class="eyebrow">Use cases</p>
+                    <h2 id="use-cases-title">Useful for the messy bits of real life.</h2>
+                </div>
+                <div class="use-case-grid">
+                    <article class="use-case-card">School holidays</article>
+                    <article class="use-case-card">PTO and annual leave</article>
+                    <article class="use-case-card">Shared parenting schedules</article>
+                    <article class="use-case-card">Travel planning</article>
+                    <article class="use-case-card">Projects and deadlines</article>
+                    <article class="use-case-card">Habits, routines, and personal rituals</article>
+                </div>
+            </section>
+
+            <section class="final-cta" aria-labelledby="final-cta-title">
+                <div class="final-cta__content">
+                    <img src="/assets/yearly/app-icon.png" alt="" class="final-cta__icon" onerror="this.hidden = true;">
+                    <h2 id="final-cta-title">Make the year easier to see.</h2>
+                    <a class="app-store-button" href="https://apps.apple.com/app/id6763142417" aria-label="Download Yearly from the App Store" data-analytics="app-store-cta">Download Yearly</a>
+                    <p>Available on the App Store.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
