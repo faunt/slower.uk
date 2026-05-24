@@ -8,14 +8,26 @@
 /* Arc Browser integration - use custom properties when available */
 :root {
     /* Fallback to our gradient colors if Arc properties aren't available */
-    --arc-palette-background: #3C5AC0;
+    --arc-palette-background: #465FC4;
     --arc-palette-foregroundPrimary: #1a1a1a;
-    --gradient-top: var(--arc-palette-background, #3C5AC0);
-    --gradient-mid: #4F70DD;
-    --gradient-low: #8CA3E8;
-    --gradient-bottom: #EACDA3;
-    --ambient-glow-top: rgba(255, 255, 255, 0.18);
-    --ambient-glow-bottom: rgba(234, 205, 163, 0.26);
+    --gradient-top: var(--arc-palette-background, #465FC4);
+    --gradient-top-support: #536CCB;
+    --gradient-mid: #6986E5;
+    --gradient-low: #9AACEF;
+    --gradient-bottom: #E8CEA0;
+    --ambient-glow-top: rgba(255, 255, 255, 0.12);
+    --ambient-glow-bottom: rgba(232, 206, 160, 0.36);
+    --toolbar-underlay-height: clamp(136px, 18svh, 188px);
+    --page-gradient:
+        radial-gradient(circle at 50% -8%, var(--ambient-glow-top) 0%, transparent 46%),
+        radial-gradient(circle at 50% 112%, var(--ambient-glow-bottom) 0%, transparent 42%),
+        linear-gradient(180deg,
+            var(--gradient-top) 0%,
+            var(--gradient-top-support) 19%,
+            var(--gradient-mid) 48%,
+            var(--gradient-low) 75%,
+            #C8BEBB 88%,
+            var(--gradient-bottom) 100%);
     --frame-toolbar-clearance: clamp(156px, 21svh, 252px);
     --frame-bottom-clearance: var(--frame-toolbar-clearance);
     --frame-content-offset: clamp(144px, 24%, 252px);
@@ -26,14 +38,7 @@ html {
     overflow: hidden;
     overscroll-behavior: none;
     background-color: var(--gradient-top);
-    background-image:
-        radial-gradient(circle at 50% -12%, var(--ambient-glow-top) 0%, transparent 48%),
-        radial-gradient(circle at 50% 118%, var(--ambient-glow-bottom) 0%, transparent 42%),
-        linear-gradient(180deg,
-            var(--gradient-top) 0%,
-            var(--gradient-mid) 38%,
-            var(--gradient-low) 78%,
-            var(--gradient-bottom) 100%);
+    background-image: var(--page-gradient);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
@@ -76,14 +81,8 @@ body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image:
-        radial-gradient(circle at 50% -12%, var(--ambient-glow-top) 0%, transparent 48%),
-        radial-gradient(circle at 50% 118%, var(--ambient-glow-bottom) 0%, transparent 42%),
-        linear-gradient(180deg,
-            var(--gradient-top) 0%,
-            var(--gradient-mid) 38%,
-            var(--gradient-low) 78%,
-            var(--gradient-bottom) 100%);
+    background-color: var(--gradient-top);
+    background-image: var(--page-gradient);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: top center;
@@ -102,6 +101,10 @@ body::before {
     overflow: hidden;
 }
 
+.toolbar-underlay {
+    display: none;
+}
+
 .container {
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(25px) saturate(180%);
@@ -109,13 +112,14 @@ body::before {
     padding: 60px 40px;
     border-radius: 60px;
     border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.12),
+    box-shadow:
+        0 6px 24px rgba(0, 0, 0, 0.09),
         0 0 0 1px rgba(255, 255, 255, 0.15) inset,
         0 1px 0 rgba(255, 255, 255, 0.3) inset;
     width: 402px;
     height: 874px;
     position: relative;
+    z-index: 1;
     transform: translateZ(0);
     will-change: transform;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -126,8 +130,8 @@ body::before {
 
 .container:hover {
     transform: translateZ(0) translateY(-2px);
-    box-shadow: 
-        0 12px 40px rgba(0, 0, 0, 0.15),
+    box-shadow:
+        0 10px 34px rgba(0, 0, 0, 0.12),
         0 0 0 1px rgba(255, 255, 255, 0.2) inset,
         0 1px 0 rgba(255, 255, 255, 0.4) inset;
 }
@@ -160,10 +164,10 @@ body::before {
     right: 0;
     bottom: 0;
     border-radius: 60px;
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.4) 0%, 
-        rgba(255, 255, 255, 0.1) 50%, 
-        rgba(255, 255, 255, 0.05) 100%);
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.32) 0%,
+        rgba(255, 255, 255, 0.08) 50%,
+        rgba(255, 255, 255, 0.04) 100%);
     pointer-events: none;
     z-index: 1;
 }
@@ -176,9 +180,9 @@ body::before {
     right: 1px;
     bottom: 1px;
     border-radius: 59px;
-    background: linear-gradient(45deg, 
-        rgba(255, 255, 255, 0.1) 0%, 
-        transparent 50%, 
+    background: linear-gradient(45deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 50%,
         rgba(255, 255, 255, 0.05) 100%);
     pointer-events: none;
     z-index: 2;
@@ -285,32 +289,104 @@ body::before {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    :root {
+        --gradient-top: #4B5EBD;
+        --ambient-glow-top: rgba(255, 255, 255, 0);
+        --frame-content-offset: clamp(82px, 18%, 132px);
+    }
+
+    html {
+        background-color: var(--gradient-top);
+        background-size: 100% 100dvh;
+        background-attachment: scroll;
+    }
+
     body {
-        padding: 20px;
+        min-height: 100dvh;
+        padding:
+            max(14px, calc(env(safe-area-inset-top, 0px) + 8px))
+            max(14px, env(safe-area-inset-right, 0px))
+            max(14px, calc(env(safe-area-inset-bottom, 0px) + 8px))
+            max(14px, env(safe-area-inset-left, 0px));
     }
 
     .page--document {
         padding: 20px;
     }
-    
-    .container {
-        /* Maintain aspect ratio 402:874 ≈ 0.46, with viewport-based sizing */
-        width: min(350px, calc(100vw - 40px));
-        height: min(760px, calc((100vh - 40px) * 0.9));
-        /* Ensure we don't exceed the aspect ratio */
-        max-height: calc((min(350px, calc(100vw - 40px))) * 2.17);
-        padding: 50px 35px;
-        border-radius: 50px;
+
+    body::after {
+        height: max(108px, calc(env(safe-area-inset-top, 0px) + 76px));
+        background: linear-gradient(
+            180deg,
+            var(--gradient-top) 0%,
+            rgba(83, 108, 203, 0.96) 60%,
+            rgba(83, 108, 203, 0) 100%
+        );
     }
-    
+
+    body::before {
+        background-color: var(--gradient-top);
+        background-size: 100% 100dvh;
+    }
+
+    .toolbar-underlay {
+        display: block;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: max(var(--toolbar-underlay-height), calc(env(safe-area-inset-bottom, 0px) + 112px));
+        background: linear-gradient(
+            180deg,
+            rgba(232, 206, 160, 0) 0%,
+            rgba(232, 206, 160, 0.72) 32%,
+            var(--gradient-bottom) 70%,
+            var(--gradient-bottom) 100%
+        );
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.09);
+        backdrop-filter: blur(20px) saturate(150%);
+        -webkit-backdrop-filter: blur(20px) saturate(150%);
+        width: min(336px, calc(100vw - 28px), 42svh);
+        height: auto;
+        aspect-ratio: 402 / 874;
+        padding: clamp(40px, 7svh, 50px) clamp(28px, 8vw, 35px);
+        border-radius: 50px;
+        box-shadow:
+            0 4px 18px rgba(0, 0, 0, 0.075),
+            0 0 0 1px rgba(255, 255, 255, 0.14) inset,
+            0 1px 0 rgba(255, 255, 255, 0.26) inset;
+        transition: none;
+    }
+
+    .container:hover {
+        transform: translateZ(0);
+        box-shadow:
+            0 4px 18px rgba(0, 0, 0, 0.075),
+            0 0 0 1px rgba(255, 255, 255, 0.14) inset,
+            0 1px 0 rgba(255, 255, 255, 0.26) inset;
+    }
+
     .container::before {
         border-radius: 50px;
+        background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.22) 0%,
+            rgba(255, 255, 255, 0.055) 48%,
+            rgba(255, 255, 255, 0.025) 100%);
     }
-    
+
     .container::after {
         border-radius: 49px;
+        background: linear-gradient(45deg,
+            rgba(255, 255, 255, 0.055) 0%,
+            transparent 52%,
+            rgba(255, 255, 255, 0.025) 100%);
     }
-    
+
     .content {
         font-size: 1.5rem;
     }
@@ -340,31 +416,33 @@ body::before {
 
 @media (max-width: 480px) {
     body {
-        padding: 15px;
+        padding:
+            max(12px, calc(env(safe-area-inset-top, 0px) + 6px))
+            max(12px, env(safe-area-inset-right, 0px))
+            max(12px, calc(env(safe-area-inset-bottom, 0px) + 6px))
+            max(12px, env(safe-area-inset-left, 0px));
     }
 
     .page--document {
         padding: 15px;
     }
-    
+
     .container {
-        /* Maintain aspect ratio with smaller margins */
-        width: min(300px, calc(100vw - 30px));
-        height: min(650px, calc((100vh - 30px) * 0.9));
-        /* Ensure we don't exceed the aspect ratio */
-        max-height: calc((min(300px, calc(100vw - 30px))) * 2.17);
-        padding: 40px 30px;
+        width: min(312px, calc(100vw - 24px), 42svh);
+        height: auto;
+        aspect-ratio: 402 / 874;
+        padding: clamp(36px, 7svh, 40px) clamp(24px, 8vw, 30px);
         border-radius: 45px;
     }
-    
+
     .container::before {
         border-radius: 45px;
     }
-    
+
     .container::after {
         border-radius: 44px;
     }
-    
+
     .content {
         font-size: 1.3rem;
     }
@@ -401,7 +479,7 @@ body::before {
     body::before {
         display: none;
     }
-    
+
     .container {
         max-width: none;
         width: auto;
