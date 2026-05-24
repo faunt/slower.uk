@@ -241,6 +241,10 @@ h1 {
     filter: drop-shadow(0 34px 58px rgba(86, 62, 42, 0.2));
 }
 
+.phone-mockup picture {
+    display: block;
+}
+
 .phone-mockup__asset {
     width: 100%;
     height: auto;
@@ -495,6 +499,10 @@ h2 {
     overflow: hidden;
     padding: 8px;
     border-radius: var(--radius-xl);
+}
+
+.desktop-glass picture {
+    display: block;
 }
 
 .desktop-glass img,

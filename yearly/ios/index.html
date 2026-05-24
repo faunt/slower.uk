@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6763142417">
     <meta name="theme-color" content="#FFF8EA">
     <meta name="theme-color" content="#FFF8EA" media="(prefers-color-scheme: light)">
     <meta name="color-scheme" content="light">
     <meta name="description" content="A simple visual calendar for highlighting date ranges, spotting overlaps, and planning the year ahead.">
-    <meta name="apple-itunes-app" content="app-id=6763142417">
     <meta property="og:title" content="Yearly - See your whole year at once">
     <meta property="og:description" content="A simple visual calendar for highlighting date ranges, spotting overlaps, and planning the year ahead.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="/assets/yearly/app-screenshot-year-view.png">
+    <meta property="og:image" content="/assets/macOS.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <title>Yearly - See your whole year at once</title>
     <link rel="stylesheet" href="/yearly/ios/styles.css">
@@ -20,7 +20,7 @@
     <!--
         Replace points:
         - App Store URL: update the App Store CTA href values if Apple changes the public product URL.
-        - Image assets: swap /assets/yearly/app-icon.png, /assets/iphone.png, and /assets/yearly/app-screenshot-year-view.png when final iOS campaign assets are ready.
+        - Image assets: swap /assets/yearly/app-icon.png, /assets/iphone.webp, /assets/iphone.png, /assets/macOS.webp, and /assets/macOS.jpg when final iOS campaign assets are ready.
         - Headline copy: edit the hero h1 and supporting paragraph in the Hero section.
         - Analytics hooks: add campaign click tracking to links with data-analytics="app-store-cta".
     -->
@@ -63,7 +63,10 @@
                         <span class="mini-calendar__face">!</span>
                     </div>
                     <div class="phone-mockup">
-                        <img src="/assets/iphone.png" alt="Yearly on iPhone showing highlighted date ranges across a year calendar." class="phone-mockup__asset" onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
+                        <picture>
+                            <source srcset="/assets/iphone.webp" type="image/webp">
+                            <img src="/assets/iphone.png" alt="Yearly on iPhone showing highlighted date ranges across a year calendar." class="phone-mockup__asset" fetchpriority="high" decoding="async" width="658" height="1256" onerror="this.hidden = true; this.closest('picture').nextElementSibling.hidden = false;">
+                        </picture>
                         <div class="phone-mockup__fallback" hidden>
                             <div class="placeholder-calendar" aria-hidden="true">
                                 <span></span><span></span><span></span><span></span>
@@ -110,7 +113,10 @@
             <section class="section product-section" aria-labelledby="product-title">
                 <div class="product-visual">
                     <div class="desktop-glass">
-                        <img src="/assets/yearly/app-screenshot-year-view.png" alt="Yearly whole-year calendar view with highlighted date ranges." onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
+                        <picture>
+                            <source srcset="/assets/macOS.webp" type="image/webp">
+                            <img src="/assets/macOS.jpg" alt="Yearly whole-year calendar view with highlighted date ranges." loading="lazy" decoding="async" width="1200" height="912" onerror="this.hidden = true; this.closest('picture').nextElementSibling.hidden = false;">
+                        </picture>
                         <div class="screenshot-placeholder screenshot-placeholder--wide" hidden>
                             <div class="placeholder-calendar" aria-hidden="true">
                                 <span></span><span></span><span></span><span></span>
@@ -151,7 +157,7 @@
 
             <section class="final-cta" aria-labelledby="final-cta-title">
                 <div class="final-cta__content">
-                    <img src="/assets/yearly/app-icon.png" alt="" class="final-cta__icon" onerror="this.hidden = true;">
+                    <img src="/assets/yearly/app-icon.png" alt="" class="final-cta__icon" loading="lazy" decoding="async" onerror="this.hidden = true;">
                     <h2 id="final-cta-title">Make the year easier to see.</h2>
                     <a class="app-store-button" href="https://apps.apple.com/app/id6763142417" aria-label="Download Yearly from the App Store" data-analytics="app-store-cta">Download Yearly</a>
                     <p>Available on the App Store.</p>
