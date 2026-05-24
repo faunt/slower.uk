@@ -503,12 +503,16 @@ h2 {
 
 .desktop-glass picture {
     display: block;
+    aspect-ratio: 2602 / 1978;
 }
 
 .desktop-glass img,
 .screenshot-placeholder--wide {
     width: 100%;
+    height: auto;
+    aspect-ratio: 2602 / 1978;
     border-radius: 28px;
+    object-fit: contain;
 }
 
 .feature-list {
