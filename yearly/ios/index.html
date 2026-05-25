@@ -22,7 +22,7 @@
         - App Store URL: update the App Store CTA href values if Apple changes the public product URL.
         - Image assets: swap /assets/yearly/app-icon.png, /assets/iphone.webp, /assets/iphone.png, /assets/macOS.webp, /assets/macOS.jpg, /assets/ribbon.webp, and /assets/dude.webp when final iOS campaign assets are ready.
         - Headline copy: edit the hero h1 and supporting paragraph in the Hero section.
-        - App Store campaign provider token: replace APP_STORE_PROVIDER_TOKEN below with the pt value from App Store Connect campaign links.
+        - App Store campaign provider token: update APP_STORE_PROVIDER_TOKEN below if Apple changes the pt value in App Store Connect campaign links.
     -->
     <div class="page-shell">
         <header class="hero">
@@ -174,7 +174,7 @@
     </div>
     <script>
         (() => {
-            const APP_STORE_PROVIDER_TOKEN = "";
+            const APP_STORE_PROVIDER_TOKEN = "128120677";
             const APP_STORE_URL = "https://apps.apple.com/app/apple-store/id6763142417";
             const DEFAULT_CAMPAIGN = "yearly_ios_landing_page";
             const CAMPAIGNS_BY_UTM_SOURCE = {
