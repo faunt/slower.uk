@@ -22,7 +22,7 @@
         - App Store URL: update the App Store CTA href values if Apple changes the public product URL.
         - Image assets: swap /assets/yearly/app-icon.png, /assets/iphone.webp, /assets/iphone.png, /assets/macOS.webp, /assets/macOS.jpg, /assets/ribbon.webp, and /assets/dude.webp when final iOS campaign assets are ready.
         - Headline copy: edit the hero h1 and supporting paragraph in the Hero section.
-        - Analytics hooks: add campaign click tracking to links with data-analytics="app-store-cta".
+        - App Store campaign provider token: update APP_STORE_PROVIDER_TOKEN below if Apple changes the pt value in App Store Connect campaign links.
     -->
     <div class="page-shell">
         <header class="hero">
@@ -32,7 +32,7 @@
                     <h1 id="hero-title">See your whole year at once.</h1>
                     <p class="hero__lede">Highlight days, weeks, holidays, custody schedules, PTO, trips, deadlines, and anything else you need to keep track of.</p>
                     <div class="hero__actions">
-                        <a class="app-store-button" href="https://apps.apple.com/app/id6763142417" aria-label="Download Yearly on the App Store" data-analytics="app-store-cta">
+                        <a class="app-store-button" href="https://apps.apple.com/app/apple-store/id6763142417?ct=yearly_ios_landing_page&mt=8" aria-label="Download Yearly on the App Store" data-analytics="app-store-cta">
                             Download on the App Store
                         </a>
                         <p class="cta-note">Designed for iPhone, iPad, and Mac.</p>
@@ -166,11 +166,45 @@
                 <div class="final-cta__content">
                     <img src="/assets/yearly/app-icon.png" alt="" class="final-cta__icon" loading="lazy" decoding="async" onerror="this.hidden = true;">
                     <h2 id="final-cta-title">Make the year easier to see.</h2>
-                    <a class="app-store-button" href="https://apps.apple.com/app/id6763142417" aria-label="Download Yearly from the App Store" data-analytics="app-store-cta">Download Yearly</a>
+                    <a class="app-store-button" href="https://apps.apple.com/app/apple-store/id6763142417?ct=yearly_ios_landing_page&mt=8" aria-label="Download Yearly from the App Store" data-analytics="app-store-cta">Download Yearly</a>
                     <p>Available on the App Store.</p>
                 </div>
             </section>
         </main>
     </div>
+    <script>
+        (() => {
+            const APP_STORE_PROVIDER_TOKEN = "128120677";
+            const APP_STORE_URL = "https://apps.apple.com/app/apple-store/id6763142417";
+            const DEFAULT_CAMPAIGN = "yearly_ios_landing_page";
+            const CAMPAIGNS_BY_UTM_SOURCE = {
+                tiktok: "yearly_ios_tiktok",
+                instagram: "yearly_ios_instagram"
+            };
+
+            const params = new URLSearchParams(window.location.search);
+            const utmSource = (params.get("utm_source") || "").trim().toLowerCase();
+            const campaignToken = CAMPAIGNS_BY_UTM_SOURCE[utmSource] || DEFAULT_CAMPAIGN;
+            const appStoreParams = new URLSearchParams({
+                ct: campaignToken,
+                mt: "8"
+            });
+
+            if (APP_STORE_PROVIDER_TOKEN) {
+                appStoreParams.set("pt", APP_STORE_PROVIDER_TOKEN);
+            }
+
+            const appStoreUrl = `${APP_STORE_URL}?${appStoreParams.toString()}`;
+            document.querySelectorAll('[data-analytics="app-store-cta"]').forEach((link) => {
+                link.href = appStoreUrl;
+            });
+
+            const smartBanner = document.querySelector('meta[name="apple-itunes-app"]');
+            if (smartBanner) {
+                const affiliateData = new URLSearchParams(appStoreParams).toString();
+                smartBanner.content = `app-id=6763142417, affiliate-data=${affiliateData}`;
+            }
+        })();
+    </script>
 </body>
 </html>
