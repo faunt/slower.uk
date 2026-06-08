@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>NTS</title>
+    <link>https://slower.uk/nts/appcast.xml</link>
+    <description>Updates for the NTS macOS app.</description>
+    <language>en</language>
+    <item>
+      <title>NTS 0.1.1</title>
+      <pubDate>Mon, 08 Jun 2026 17:01:16 +0100</pubDate>
+      <sparkle:version>35</sparkle:version>
+      <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <link>https://slower.uk/nts/</link>
+      <description><![CDATA[- App bundling: distribution & auto-update]]></description>
+      <enclosure url="https://slower.uk/nts/NTS-0.1.1-build35.dmg" sparkle:version="35" sparkle:shortVersionString="0.1.1" length="1871510" type="application/x-apple-diskimage"/>
+    </item>
+  </channel>
+</rss>
