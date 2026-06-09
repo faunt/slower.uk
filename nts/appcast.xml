@@ -6,16 +6,14 @@
     <description>Updates for the NTS macOS app.</description>
     <language>en</language>
     <item>
-      <title>NTS 0.1.2</title>
-      <pubDate>Mon, 08 Jun 2026 22:47:30 +0100</pubDate>
-      <sparkle:version>38</sparkle:version>
-      <sparkle:shortVersionString>0.1.2</sparkle:shortVersionString>
+      <title>NTS 0.1.3</title>
+      <pubDate>Tue, 09 Jun 2026 10:18:15 +0100</pubDate>
+      <sparkle:version>40</sparkle:version>
+      <sparkle:shortVersionString>0.1.3</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <link>https://slower.uk/nts/</link>
-      <description><![CDATA[- Title layout: shared bottom baseline + per-title size variety
-- Adopt Sparkle 2 for in-app auto-update
-- Fix macOS 26 grey-plate app icon (Liquid Glass Assets.car)]]></description>
-      <enclosure url="https://slower.uk/nts/NTS-0.1.2-build38.dmg" sparkle:version="38" sparkle:shortVersionString="0.1.2" sparkle:edSignature="PR0X7T+ey+dw2KDRCbA0uW+QNgtootnk2gyltuw2sSXfRE4chP1ydgYSjtiGhFjU4ivSNM6ojRDIhbLp4AkDDQ==" length="3421900" type="application/x-apple-diskimage"/>
+      <description><![CDATA[Fixes NTS Supporter sign-in so it stays signed in across relaunches.]]></description>
+      <enclosure url="https://slower.uk/nts/NTS-0.1.3-build40.dmg" sparkle:version="40" sparkle:shortVersionString="0.1.3" sparkle:edSignature="ohzfz7j0p67Z6b+LIVcKbaYmBBa/3J35wLTdRvJqL3vi6PS62stoSC6I5EBwiKoMqF8wVr8S3KIyf/SkIDRKBA==" length="3420907" type="application/x-apple-diskimage"/>
     </item>
   </channel>
 </rss>
