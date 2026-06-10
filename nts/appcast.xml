@@ -6,14 +6,14 @@
     <description>Updates for the NTS macOS app.</description>
     <language>en</language>
     <item>
-      <title>NTS 0.1.3</title>
-      <pubDate>Tue, 09 Jun 2026 10:18:15 +0100</pubDate>
-      <sparkle:version>40</sparkle:version>
-      <sparkle:shortVersionString>0.1.3</sparkle:shortVersionString>
+      <title>NTS 0.1.4</title>
+      <pubDate>Wed, 10 Jun 2026 16:17:45 +0100</pubDate>
+      <sparkle:version>42</sparkle:version>
+      <sparkle:shortVersionString>0.1.4</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <link>https://slower.uk/nts/</link>
-      <description><![CDATA[Fixes NTS Supporter sign-in so it stays signed in across relaunches.]]></description>
-      <enclosure url="https://slower.uk/nts/NTS-0.1.3-build40.dmg" sparkle:version="40" sparkle:shortVersionString="0.1.3" sparkle:edSignature="ohzfz7j0p67Z6b+LIVcKbaYmBBa/3J35wLTdRvJqL3vi6PS62stoSC6I5EBwiKoMqF8wVr8S3KIyf/SkIDRKBA==" length="3420907" type="application/x-apple-diskimage"/>
+      <description><![CDATA[- Sidebar: let track and show names wrap instead of truncating]]></description>
+      <enclosure url="https://slower.uk/nts/NTS-0.1.4-build42.dmg" sparkle:version="42" sparkle:shortVersionString="0.1.4" sparkle:edSignature="b1eMw4dwp6aM9Usi5lv7FG7rdA7lPbUf2VKK2QKd9C6HgreYdv/LEHRtjlXLQqUwscTEwrkGb++uZAqkcrPuBA==" length="3420286" type="application/x-apple-diskimage"/>
     </item>
   </channel>
 </rss>
