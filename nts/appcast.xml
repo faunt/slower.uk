@@ -6,15 +6,14 @@
     <description>Updates for the NTS macOS app.</description>
     <language>en</language>
     <item>
-      <title>NTS 0.1.5</title>
-      <pubDate>Wed, 10 Jun 2026 19:01:53 +0100</pubDate>
-      <sparkle:version>46</sparkle:version>
-      <sparkle:shortVersionString>0.1.5</sparkle:shortVersionString>
+      <title>NTS 0.1.6</title>
+      <pubDate>Thu, 11 Jun 2026 10:41:29 +0100</pubDate>
+      <sparkle:version>49</sparkle:version>
+      <sparkle:shortVersionString>0.1.6</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <link>https://slower.uk/nts/</link>
-      <description><![CDATA[- DJ-style channel crossfade (opt-in, experimental)
-- Sidebar: stop multi-line show-boundary names overflowing into the next row]]></description>
-      <enclosure url="https://slower.uk/nts/NTS-0.1.5-build46.dmg" sparkle:version="46" sparkle:shortVersionString="0.1.5" sparkle:edSignature="zK5SOVQcqJdatrvBKY3tZra989ioz1Bl/BOobUUKKDlfUKGKCB8jn74FltOx559nmni+ydjb9sAbmXTYsz2xDw==" length="3433805" type="application/x-apple-diskimage"/>
+      <description><![CDATA[- Crossfade is now on by default (toggle in the menu under Experimental)<br>- Pause then play returns to live radio; a quick pause (within ~15s) resumes instantly<br>- More reliable playback over long sessions and after sleep/standby<br>- Switching back to the just-played channel within ~10s no longer reloads]]></description>
+      <enclosure url="https://slower.uk/nts/NTS-0.1.6-build49.dmg" sparkle:version="49" sparkle:shortVersionString="0.1.6" sparkle:edSignature="ZdPbIUdMGRrbsueL7rVyl2ivN549umLPcPmgrOHXPKmkfZNreReDoR3xkaUhzWez4uWttAgfBG1TZEKJgiCkDQ==" length="3444350" type="application/x-apple-diskimage"/>
     </item>
   </channel>
 </rss>
